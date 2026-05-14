@@ -1,0 +1,13 @@
+{
+  "name": "ai-booking-agent-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.1.0"
+  }
+}
