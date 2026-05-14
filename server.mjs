@@ -1,14 +1,15 @@
 import express from 'express';
+import cors from 'cors';
 import Anthropic from '@anthropic-ai/sdk';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import * as dotenv from 'dotenv';
 
-dotenv.config({ path: join(dirname(fileURLToPath(import.meta.url)), '..', '.env') });
+dotenv.config({ path: join(dirname(fileURLToPath(import.meta.url)), '.env') });
 
 const app = express();
+app.use(cors());
 app.use(express.json());
-app.use(express.static(dirname(fileURLToPath(import.meta.url))));
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
